@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz 1 - AIML Mission Lab</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <nav class="nav-bar">
+      <div class="logo">
+        <h2>🚀 AIML Mission Lab</h2>
+      </div>
+      <div class="nav-links">
+        <button class="nav-btn" onclick="goToDashboard()">Dashboard</button>
+        <button class="nav-btn" onclick="loadProfile()">Profile</button>
+        <button class="nav-btn" onclick="logout()">Logout</button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="back-btn">
+        <button onclick="goToModule(1)">← Back to Module</button>
+      </div>
+
+      <div id="quiz-container">
+        <h1 id="quiz-title">Quiz</h1>
+        <div id="questions"></div>
+        <button id="submit-quiz" class="quiz-submit-btn" onclick="submitQuiz(1)" style="display:none;">Submit Answers</button>
+        <div id="quiz-result" style="display:none;"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
