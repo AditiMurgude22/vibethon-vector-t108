@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AIML Mission Lab</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-
-  <div class="container">
-    <h1>AIML Mission Lab 🚀</h1>
-    <p>Welcome to your AI learning journey</p>
-    
-<button onclick="checkLandingAuth()">Get Started</button>
+  <div class="page-shell center">
+    <div class="panel hero">
+      <p class="subtitle">AI + ML Hackathon Learning Platform</p>
+      <h1>AIML Mission Lab</h1>
+      <p>Learn core AI concepts through an interactive Spam Detection mission with quizzes, leaderboard, and progress tracking.</p>
+      <button id="start-btn" class="primary-btn">Get Started</button>
+    </div>
   </div>
-
-  <script src="app.js"></script>
+  <script type="module" src="./pages/landing.js"></script>
 </body>
 </html>

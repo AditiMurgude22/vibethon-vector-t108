@@ -2,31 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - AIML Mission Lab</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <div class="dashboard-container">
-    <nav class="nav-bar">
-      <div class="logo">
-        <h2>🚀 AIML Mission Lab</h2>
-      </div>
-      <div class="nav-links">
-        <button class="nav-btn" onclick="loadProfile()">Profile</button>
-        <button class="nav-btn" onclick="loadLeaderboard()">Leaderboard</button>
-        <button class="nav-btn" onclick="logout()">Logout</button>
-      </div>
-    </nav>
+  <div class="page-shell">
+    <header class="top-bar">
+      <h2>AIML Mission Lab Dashboard</h2>
+      <nav>
+        <a class="primary-btn ghost" href="./profile.html">Profile</a>
+        <button id="logout-btn" class="primary-btn ghost" type="button">Logout</button>
+      </nav>
+    </header>
 
-    <main class="main-content">
-      <h1>Your Learning Dashboard</h1>
-      
-      <div id="modules-container" class="modules-grid">
-        <!-- Modules loaded dynamically -->
-      </div>
+    <main class="content-grid">
+      <section class="panel">
+        <h3 id="welcome">Welcome</h3>
+        <p class="subtitle">Track your learning momentum and unlock badges.</p>
+        <div class="stats-grid">
+          <div class="stat-card"><span>Score</span><strong id="score">0</strong></div>
+          <div class="stat-card"><span>Streak</span><strong id="streak">0</strong></div>
+          <div class="stat-card"><span>Progress</span><strong id="progress">0%</strong></div>
+        </div>
+        <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+        <div id="badges" class="badge-row"></div>
+      </section>
+
+      <section class="panel">
+        <h3>Leaderboard</h3>
+        <ul id="leaderboard-list" class="leaderboard"></ul>
+      </section>
+
+      <section class="panel full-width">
+        <h3>Learning Modules</h3>
+        <div id="modules-container" class="modules-grid"></div>
+      </section>
+      <p id="dashboard-error" class="error-text"></p>
     </main>
   </div>
 
-  <script src="../app.js"></script>
+  <script type="module" src="./dashboard.js"></script>
 </body>
 </html>

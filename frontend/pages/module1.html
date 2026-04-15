@@ -2,39 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Module 1: Intro to ML - AIML Mission Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1: Spam Detection - AIML Mission Lab</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <div class="dashboard-container">
-    <nav class="nav-bar">
-      <div class="logo">
-        <h2>🚀 AIML Mission Lab</h2>
-      </div>
-      <div class="nav-links">
-        <button class="nav-btn" onclick="goToDashboard()">Dashboard</button>
-        <button class="nav-btn" onclick="loadLeaderboard()">Leaderboard</button>
-        <button class="nav-btn" onclick="logout()">Logout</button>
-      </div>
-    </nav>
+  <div class="page-shell">
+    <header class="top-bar">
+      <h2>Spam Detection Module</h2>
+      <nav>
+        <a class="primary-btn ghost" href="./dashboard.html">Dashboard</a>
+        <button id="logout-btn" class="primary-btn ghost" type="button">Logout</button>
+      </nav>
+    </header>
 
-    <main class="main-content">
-      <div class="back-btn">
-        <button onclick="goToDashboard()">← Back to Dashboard</button>
-      </div>
+    <main class="content-grid">
+      <section class="panel full-width">
+        <h3>Module Content</h3>
+        <p class="subtitle">Understand how classification models separate spam and safe messages.</p>
+        <div id="module-sections"></div>
+        <p id="module-error" class="error-text"></p>
+      </section>
 
-      <div id="module-content">
-        <h1>Module 1: Introduction to Machine Learning</h1>
-        <!-- Content loaded dynamically from /module/1 -->
-        <div id="content-sections"></div>
-        
-        <div class="module-footer">
-          <button class="quiz-btn" onclick="startQuiz(1)">Take Quiz → Earn 100 Points</button>
-        </div>
-      </div>
+      <section class="panel full-width">
+        <h3>Spam Detection Simulator</h3>
+        <input id="message-input" type="text" placeholder="Type a message to classify">
+        <button id="run-predict" class="primary-btn" type="button">Run /predict</button>
+        <p id="predict-result"></p>
+      </section>
+
+      <section class="panel full-width">
+        <a href="./quiz1.html" class="primary-btn">Start Quiz</a>
+      </section>
     </main>
   </div>
 
-  <script src="../app.js"></script>
+  <script type="module" src="./module.js"></script>
 </body>
 </html>

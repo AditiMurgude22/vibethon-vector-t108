@@ -2,38 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile - AIML Mission Lab</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <div class="dashboard-container">
-    <nav class="nav-bar">
-      <div class="logo">
-        <h2>🚀 AIML Mission Lab</h2>
-      </div>
-      <div class="nav-links">
-        <button class="nav-btn" onclick="goToDashboard()">Dashboard</button>
-        <button class="nav-btn" onclick="loadLeaderboard()">Leaderboard</button>
-        <button class="nav-btn" onclick="logout()">Logout</button>
-      </div>
-    </nav>
+  <div class="page-shell">
+    <header class="top-bar">
+      <h2>Profile & Progress</h2>
+      <nav>
+        <a class="primary-btn ghost" href="./dashboard.html">Dashboard</a>
+        <button id="logout-btn" class="primary-btn ghost" type="button">Logout</button>
+      </nav>
+    </header>
 
-    <main class="main-content">
-      <h1>Your Profile</h1>
-      
-      <div class="profile-card">
+    <main class="content-grid">
+      <section class="panel">
         <h3 id="profile-name">Loading...</h3>
-        <p>Total Points: <span id="profile-points">0</span></p>
-        <p>Completed Modules: <span id="completed-modules">0</span></p>
-      </div>
+        <p class="subtitle">Your personal progress snapshot.</p>
+        <p>Email: <span id="profile-email">...</span></p>
+        <p>Score: <span id="profile-score">0</span></p>
+        <p>Progress: <span id="profile-progress">0%</span></p>
+        <p>Streak: <span id="profile-streak">0</span></p>
+        <div id="profile-badges" class="badge-row"></div>
+      </section>
 
-      <div class="quiz-scores">
-        <h3>Quiz Scores</h3>
-        <ul id="scores-list"></ul>
-      </div>
+      <section class="panel">
+        <h3>Quiz History</h3>
+        <ul id="quiz-score-list"></ul>
+      </section>
+      <p id="profile-error" class="error-text"></p>
     </main>
   </div>
 
-  <script src="../app.js"></script>
+  <script type="module" src="./profile.js"></script>
 </body>
 </html>
