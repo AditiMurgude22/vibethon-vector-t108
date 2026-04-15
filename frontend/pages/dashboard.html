@@ -11,15 +11,19 @@
     <header class="top-bar">
       <h2>AIML Mission Lab Dashboard</h2>
       <nav>
-        <a class="primary-btn ghost" href="./profile.html">Profile</a>
         <button id="logout-btn" class="primary-btn ghost" type="button">Logout</button>
       </nav>
     </header>
 
-    <main class="content-grid">
-      <section class="panel">
-        <h3 id="welcome">Welcome</h3>
-        <p class="subtitle">Track your learning momentum and unlock badges.</p>
+    <main class="content-grid dashboard-layout">
+      <section class="panel full-width">
+        <h3 id="welcome">👋 Welcome</h3>
+        <p class="subtitle">Continue your learning journey with smart topic-based lessons.</p>
+        <div class="progress-summary">
+          <p id="summary-streak">🔥 Streak: 0 days</p>
+          <p id="summary-progress">📊 Progress: 0%</p>
+          <p id="summary-score">🏆 Score: 0 pts</p>
+        </div>
         <div class="stats-grid">
           <div class="stat-card"><span>Score</span><strong id="score">0</strong></div>
           <div class="stat-card"><span>Streak</span><strong id="streak">0</strong></div>
@@ -29,14 +33,12 @@
         <div id="badges" class="badge-row"></div>
       </section>
 
-      <section class="panel">
-        <h3>Leaderboard</h3>
-        <ul id="leaderboard-list" class="leaderboard"></ul>
-      </section>
-
-      <section class="panel full-width">
-        <h3>Learning Modules</h3>
-        <div id="modules-container" class="modules-grid"></div>
+      <section class="panel learn-card-wrap">
+        <div class="learn-card">
+          <h3>Learn Any Topic</h3>
+          <p>Enter any topic and start learning instantly</p>
+          <button id="start-learning-btn" class="primary-btn" type="button">Start Learning</button>
+        </div>
       </section>
       <p id="dashboard-error" class="error-text"></p>
     </main>

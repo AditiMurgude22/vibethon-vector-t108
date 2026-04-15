@@ -7,8 +7,6 @@ const {
   toSafeUser
 } = require("../models/store");
 
-const SPAM_WORDS = ["win", "free", "urgent", "click", "prize", "offer", "limited", "cash"];
-
 function listModules(req, res) {
   return res.json({ success: true, modules: learningModules });
 }
@@ -78,30 +76,6 @@ function submitQuiz(req, res) {
   });
 }
 
-function predictSpam(req, res) {
-  const { message } = req.body;
-  if (!message || typeof message !== "string") {
-    return res.status(400).json({ success: false, message: "message is required" });
-  }
-
-  const lowerMessage = message.toLowerCase();
-  const detectedWord = SPAM_WORDS.find((word) => lowerMessage.includes(word));
-  const result = detectedWord ? "Spam" : "Not Spam";
-
-  // Reward learners for engaging with simulator.
-  if (req.user) {
-    req.user.score += 5;
-    req.user.progress = Math.min(100, (req.user.progress || 0) + 5);
-    req.user.badges = buildBadges(req.user);
-  }
-
-  return res.json({
-    success: true,
-    result,
-    reason: detectedWord ? `Detected keyword: "${detectedWord}"` : "No spam keywords detected"
-  });
-}
-
 function getLeaderboard(req, res) {
   const ranked = [...users]
     .sort((a, b) => b.score - a.score)
@@ -127,7 +101,6 @@ module.exports = {
   getModule,
   getQuiz,
   submitQuiz,
-  predictSpam,
   getLeaderboard,
   getProfile
 };

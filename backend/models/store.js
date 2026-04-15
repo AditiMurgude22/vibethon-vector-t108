@@ -3,27 +3,27 @@ const users = [];
 const learningModules = [
   {
     id: 1,
-    slug: "spam-detection",
-    title: "Spam Detection (Classification)",
-    description: "Learn how classification models identify spam messages.",
+    slug: "smart-learning-module",
+    title: "Smart Learning Module",
+    description: "Enter any supported topic and get an instant explanation + quiz.",
     sections: [
       {
         key: "concept",
         title: "Concept",
         content:
-          "Spam detection is a classification task. The model learns patterns from labeled examples and predicts if a new message is Spam or Not Spam."
+          "Choose a topic and the module explains core ideas in clear and simple language."
       },
       {
         key: "example",
         title: "Example",
         content:
-          "Message: 'Congratulations! You won a free prize. Click now.' -> Spam. Message: 'Team meeting moved to 3 PM.' -> Not Spam."
+          "Topic: Photosynthesis -> Definition, key points, and a practical example are shown."
       },
       {
         key: "practice",
         title: "Practice",
         content:
-          "Try short messages in the spam simulator and check how keyword-based logic classifies them in real time."
+          "Try different topics like AI, Machine Learning, Newton Laws, and Photosynthesis."
       },
       {
         key: "quiz",
@@ -40,46 +40,21 @@ const quizzes = [
   {
     id: 1,
     moduleId: 1,
-    title: "Spam Detection Quiz",
+    title: "Smart Learning Quiz",
     questions: [
       {
-        question: "What type of ML task is spam detection?",
-        options: ["Classification", "Regression", "Clustering", "Reinforcement Learning"],
+        question: "Machine Learning belongs to which field?",
+        options: ["Artificial Intelligence", "Civil Engineering", "Biochemistry", "Astronomy"],
         correctIndex: 0
       },
       {
-        question: "Which message is most likely spam?",
-        options: [
-          "Please review today's class notes",
-          "You won a FREE gift card, click now!",
-          "Can we meet at 5 PM?",
-          "Homework deadline is tomorrow"
-        ],
-        correctIndex: 1
-      },
-      {
-        question: "Why are labels important in spam detection training?",
-        options: [
-          "To speed up internet connection",
-          "To identify message language",
-          "To teach the model what is spam vs not spam",
-          "To encrypt messages"
-        ],
+        question: "Which process uses sunlight to make food in plants?",
+        options: ["Respiration", "Fermentation", "Photosynthesis", "Evaporation"],
         correctIndex: 2
       },
       {
-        question: "A high spam false-positive rate means:",
-        options: [
-          "Too many spam messages are missed",
-          "Too many genuine messages are marked as spam",
-          "The model has no training data",
-          "The model only uses numbers"
-        ],
-        correctIndex: 1
-      },
-      {
-        question: "Which keyword often appears in spam?",
-        options: ["meeting agenda", "free", "assignment", "schedule"],
+        question: "F = m*a is from which law?",
+        options: ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Hooke's Law"],
         correctIndex: 1
       }
     ]
@@ -90,7 +65,7 @@ function buildBadges(user) {
   const badges = [];
   if (user.score >= 100) badges.push("Century Scorer");
   if (user.streak >= 2) badges.push("Consistency Star");
-  if ((user.completedModules || []).length >= 1) badges.push("Spam Buster");
+  if ((user.completedModules || []).length >= 1) badges.push("Topic Explorer");
   return badges;
 }
 

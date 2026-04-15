@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - AIML Mission Lab</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="top-bar">
+      <h2 id="quiz-topic-title">Topic Quiz</h2>
+    </header>
+
+    <main class="content-grid">
+      <section class="panel full-width">
+        <p id="quiz-counter" class="subtitle">Q1/10</p>
+        <h3 id="quiz-question">Loading...</h3>
+        <div id="quiz-options" class="quiz-options-grid"></div>
+        <button id="next-btn" class="primary-btn" type="button" disabled>Next</button>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./quiz-flow.js"></script>
+</body>
+</html>

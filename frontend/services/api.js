@@ -58,12 +58,6 @@ export const api = {
       body: JSON.stringify({ answers })
     });
   },
-  predict(message) {
-    return request("/predict", {
-      method: "POST",
-      body: JSON.stringify({ message })
-    });
-  },
   getLeaderboard() {
     return request("/leaderboard");
   },

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn - AIML Mission Lab</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="top-bar">
+      <h2>Learn Any Topic</h2>
+      <nav>
+        <a class="primary-btn ghost" href="./dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="content-grid">
+      <section class="panel full-width">
+        <div class="category-filters">
+          <button class="filter-btn active" data-category="All" type="button">All</button>
+          <button class="filter-btn" data-category="AIML" type="button">AIML</button>
+          <button class="filter-btn" data-category="Biology" type="button">Biology</button>
+          <button class="filter-btn" data-category="Science" type="button">Science</button>
+        </div>
+        <div id="suggested-topics" class="topic-cards"></div>
+        <input id="topic-input" type="text" placeholder="Enter topic (e.g. Photosynthesis)">
+        <button id="learn-btn" class="primary-btn" type="button">Learn</button>
+        <p id="learn-error" class="error-text"></p>
+      </section>
+
+      <section class="panel full-width" id="learn-content" style="display:none;">
+        <h3 id="learn-title"></h3>
+        <div id="learn-sections"></div>
+        <button id="take-quiz-btn" class="primary-btn" type="button" style="display:none;">Take Quiz</button>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./learn.js"></script>
+</body>
+</html>
